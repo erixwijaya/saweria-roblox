@@ -5,8 +5,11 @@ const app = express();
 app.use(bodyParser.json());
 
 app.post("/saweria", (req, res) => {
-  console.log("💰 Donasi:", req.body);
+  console.log("💰 Donasi masuk:", req.body);
   res.send("OK");
 });
 
-app.listen(3000, () => console.log("🚀 Backend jalan"));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log("🚀 Server running on port", PORT);
+});
